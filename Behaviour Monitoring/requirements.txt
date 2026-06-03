@@ -1,0 +1,46 @@
+# ============================================================
+# requirements.txt – Chicken Behaviour Monitoring System
+# ============================================================
+# Install on Raspberry Pi 4:
+#   pip install -r requirements.txt --extra-index-url \
+#       https://www.piwheels.org/simple
+#
+# Install on PC / Colab (for training):
+#   pip install -r requirements.txt
+# ============================================================
+
+# ── Core vision & ML ────────────────────────────────────────
+numpy>=1.23,<2.0
+opencv-python>=4.7          # Use opencv-python-headless on Pi for speed
+scipy>=1.10
+scikit-learn>=1.2
+pandas>=2.0
+imutils>=0.5.4
+
+# ── TFLite runtime (Pi – much lighter than full tensorflow) ─
+# On Raspberry Pi 4 use the official tflite-runtime wheel:
+#   pip install tflite-runtime --extra-index-url https://www.piwheels.org/simple
+# On PC use tensorflow which bundles tflite:
+tflite-runtime>=2.14; platform_machine == "aarch64"
+tensorflow>=2.13; platform_machine != "aarch64"
+
+# ── Object detection training (PC/Colab only) ───────────────
+ultralytics>=8.0            # YOLOv8 training + export
+
+# ── Kalman filter (SORT tracker) ────────────────────────────
+filterpy>=1.4.5
+
+# ── Raspberry Pi camera (Pi only) ───────────────────────────
+# picamera2 is installed via apt on Pi OS:
+#   sudo apt install python3-picamera2
+# Uncomment if installing via pip in a venv:
+# picamera2>=0.3
+
+# ── Alerts & messaging ──────────────────────────────────────
+paho-mqtt>=1.6
+
+# ── Optional: web dashboard ─────────────────────────────────
+flask>=3.0
+
+# ── Optional: TF Model Maker (TFLite detector training) ─────
+# tflite-model-maker  # Requires TF 2.x; often easier on Colab

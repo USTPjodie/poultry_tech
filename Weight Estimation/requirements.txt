@@ -1,0 +1,32 @@
+# ── Poultry Weight Estimation — Python dependencies ──────────────────────────
+# Install with:  pip install -r requirements.txt
+#
+# Optional GPU-accelerated deep learning:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+
+# Core scientific stack
+numpy>=1.23
+scipy>=1.10
+pandas>=2.0
+matplotlib>=3.7
+
+# Computer vision
+opencv-python>=4.8
+
+# Machine learning (classical)
+scikit-learn>=1.3
+
+# Azure Kinect SDK Python binding
+# Requires the Azure Kinect SDK to be installed on the OS first.
+# Windows/Linux: https://github.com/microsoft/Azure-Kinect-Sensor-SDK
+# pyk4a==1.5.0       # uncomment when Kinect hardware is present
+
+# Alternative: Kinect v2
+# pykinect2          # Windows only
+
+# Deep learning (optional — comment out if not using CNN / PointNet)
+# torch>=2.0
+# torchvision>=0.15
+
+# Utilities
+tqdm>=4.65
